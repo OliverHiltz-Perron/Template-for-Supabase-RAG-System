@@ -1,0 +1,40 @@
+{
+  "processing": {
+    "max_file_count": 500,
+    "pdf_conversion": {
+      "enabled": "auto",
+      "preserve_tables": true,
+      "preserve_code_blocks": true
+    }
+  },
+  "embeddings": {
+    "model": "text-embedding-3-small",
+    "dimensions": 1536,
+    "batch_size": 100
+  },
+  "chunking": {
+    "method": "semantic",
+    "max_tokens": 500,
+    "overlap_tokens": 50
+  },
+  "retrieval": {
+    "initial_candidates": 50,
+    "final_results": 10,
+    "reranker": {
+      "enabled": false,
+      "model": "jina-reranker-v2-base-multilingual"
+    }
+  },
+  "llm": {
+    "enabled": true,
+    "model": "gpt-4o-mini",
+    "max_tokens": 1000,
+    "temperature": 0.7
+  },
+  "logging": {
+    "query_logging": true,
+    "log_failed_queries": true,
+    "log_response_times": true,
+    "anonymous_analytics": false
+  }
+}
